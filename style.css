@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background: #000;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    
+    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.7) 0%, rgba(20, 10, 40, 0.5) 100%), url('pic/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 20px 8%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0;
+    z-index: 1000;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    cursor: pointer;
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo:hover {
+    transform: scale(1.08);
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #ff2e63, #ff00cc);
+    transition: width 0.3s ease-out;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.login-btn {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 25px;
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    color: #ff2e63;
+    text-shadow: 0 0 15px rgba(255, 46, 99, 0.8);
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #fff;
+    background-size: 200% auto;
+    background-image: linear-gradient(45deg, #ff2e63 0%, #ff00cc 51%, #ff2e63 100%);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 50px;
+    border-top-right-radius: 0;
+    box-shadow: 0 10px 30px rgba(255, 0, 204, 0.3);
+    transition: 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn:hover {
+    background-position: right center;
+    border-top-right-radius: 50px;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 46, 99, 0.5);
+}
+
+.content {
+    margin-top: 8%;
+    max-width: 680px;
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.content h1 {
+    font-size: 90px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #ffc1e3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+    letter-spacing: -2px;
+}
+
+.content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.content .btn {
+    padding: 16px 50px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.Features-img {
+    width: 600px;
+    position: absolute;
+    bottom: -50px;
+    right: 5%;
+    filter: drop-shadow(-20px 20px 40px rgba(0,0,0,0.6));
+    z-index: 5;
+    transition: transform 0.5s ease;
+}
+
+.Features-img:hover {
+    transform: translateY(-20px) scale(1.02);
+}
+
+.anim {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.content h1.anim { animation-delay: 0.2s; }
+.content p.anim { animation-delay: 0.4s; }
+.content .btn.anim { animation-delay: 0.6s; }
+.Features-img.anim { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero { padding: 20px 5%; }
+    .Features-img { width: 500px; right: 2%; }
+    .content h1 { font-size: 70px; }
+}
